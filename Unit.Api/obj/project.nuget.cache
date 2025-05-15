@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ZtIL7F4dhYg=",
+  "dgSpecHash": "ykfS0iqn57Y=",
   "success": true,
   "projectFilePath": "C:\\Dev\\unit\\Unit.Api\\Unit.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\davif\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.3\\microsoft.aspnetcore.openapi.9.0.3.nupkg.sha512",
+    "C:\\Users\\davif\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.5\\microsoft.extensions.dependencyinjection.9.0.5.nupkg.sha512",
+    "C:\\Users\\davif\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512",
     "C:\\Users\\davif\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "h92f8W7zZfQ=",
+  "dgSpecHash": "R55/XRmuctc=",
   "success": true,
   "projectFilePath": "C:\\Dev\\unit\\Unit.Core\\Unit.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\davif\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.5\\microsoft.extensions.dependencyinjection.9.0.5.nupkg.sha512",
+    "C:\\Users\\davif\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.5\\microsoft.extensions.dependencyinjection.abstractions.9.0.5.nupkg.sha512"
+  ],
   "logs": []
 }
