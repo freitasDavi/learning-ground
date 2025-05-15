@@ -1,0 +1,42 @@
+# Diretórios de build
+bin/
+obj/
+
+# Configurações do Visual Studio
+.vs/
+*.suo
+*.user
+*.dbmdl
+*.log
+*.sdf
+*.sqlite
+*.cache
+*.pdb
+
+# Arquivos do sistema
+Thumbs.db
+ehthumbs.db
+$RECYCLE.BIN/
+
+# Dependências e pacotes
+**/node_modules/
+**/packages/
+*.nupkg
+*.snupkg
+
+# Arquivos temporários e logs
+*.log
+*.tmp
+*.bak
+
+# Chaves e credenciais sensíveis (ajuste conforme necessário)
+appsettings.json
+appsettings.Development.json
+
+# Teste e cobertura de código
+TestResults/
+coverage/
+.coverage
+
+# Git
+*.orig
