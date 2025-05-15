@@ -1,6 +1,8 @@
 
 
+using System.ComponentModel.DataAnnotations;
 using Moq;
+using Unit.Core.Dtos.Products;
 using Unit.Core.Entities;
 using Unit.Core.Interfaces.Products;
 using Unit.Core.Services;
@@ -50,6 +52,37 @@ namespace Unit.Tests.Unit.Products
             var result = await _service.GetByIdAsync(productId);
 
             Assert.Null(result);
+        }
+
+        [Fact]
+        public async Task CreateProduct_ValidProduct_ReturnsProductId()
+        {
+            // Arrange
+            var newProductId = 1;
+            var productDto = new CreateProductDto { CategoryId = 1, Name = "New Product", Price = 200m };
+
+            // Mockando rep, se passar qualquer objeto do tipo Produto, retorna o Id
+            _mockRepository.Setup(r => r.AddAsync(It.IsAny<Product>())).ReturnsAsync(newProductId);
+
+            // Act
+            var result = await _service.AddAsync(productDto);
+
+            // Assert
+            Assert.Equal(newProductId, result);
+            _mockRepository.Verify(r => r.AddAsync(It.Is<Product>(p =>
+                p.Name == productDto.Name &&
+                p.Price == productDto.Price &&
+                p.CategoryId == productDto.CategoryId)), Times.Once);
+        }
+
+        [Fact]
+        public async Task CreateProduct_InvalidProduct_ThrowsValidationException()
+        {
+            var productDto = new CreateProductDto { Name = "", Price = 0m, CategoryId = 1 };
+
+            await Assert.ThrowsAsync<ValidationException>(() => _service.AddAsync(productDto));
+
+            _mockRepository.Verify(r => r.AddAsync(It.IsAny<Product>()), Times.Never);
         }
     }
 }
