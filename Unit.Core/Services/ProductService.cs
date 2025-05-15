@@ -74,9 +74,14 @@ namespace Unit.Core.Services
             };
         }
 
-        public Task UpdateAsync(Product product)
+        public async Task UpdateAsync(int id, UpdateProductDto product)
         {
-            throw new NotImplementedException();
+            var productToUpdate = await _productRepository.GetByIdAsync(id) ?? throw new ValidationException("Product not found!");
+
+            productToUpdate.Name = product.Name;
+            productToUpdate.Price = product.Price;
+
+            await _productRepository.UpdateAsync(productToUpdate);
         }
     }
 }

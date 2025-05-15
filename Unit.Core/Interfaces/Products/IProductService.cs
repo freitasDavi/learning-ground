@@ -1,7 +1,6 @@
 
 
 using Unit.Core.Dtos.Products;
-using Unit.Core.Entities;
 
 namespace Unit.Core.Interfaces.Products
 {
@@ -10,7 +9,7 @@ namespace Unit.Core.Interfaces.Products
         Task<ProductDto> GetByIdAsync(int id);
         Task<IEnumerable<ProductDto>> GetAllAsync();
         Task<int> AddAsync(CreateProductDto product);
-        Task UpdateAsync(Product product);
+        Task UpdateAsync(int id, UpdateProductDto product);
         Task DeleteAsync(int id);
     }
 }
