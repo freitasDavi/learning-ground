@@ -7,7 +7,7 @@ using Unit.Core.Interfaces.Products;
 
 namespace Unit.Core.Services
 {
-    internal class ProductService : IProductService
+    public class ProductService : IProductService
     {
         private readonly IProductRepository _productRepository;
 
